@@ -2,7 +2,7 @@
 [![CPAN Version](https://img.shields.io/cpan/v/Software-Policies)](https://metacpan.org/dist/Software-Policies)
 [![kwalitee](https://cpants.cpanauthors.org/dist/Software-Policies.svg)](https://cpants.cpanauthors.org/dist/Software-Policies)
 
-# Project-Policies
+# Software-Policies
 
 Create policy files, e.g. CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md, etc.
 
