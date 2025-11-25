@@ -6,7 +6,7 @@ use 5.010;
 
 # ABSTRACT: Create policy files: CODE_OF_CONDUCT, CONTRIBUTING, FUNDING, GOVERNANCE, SECURITY, SUPPORT, etc.
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 use Module::Load qw( load );
 use Module::Loader ( );
