@@ -92,7 +92,7 @@ sub create {
     my %attributes;
     my $attrs = $args{'attributes'}//{};
     $attributes{'holder'} = $attrs->{'authors'}->[0] if $attrs->{'authors'};
-    $attributes{'year'} = $attrs->{'authors'}->[0] if $attrs->{'authors'};
+    $attributes{'year'} = $attrs->{'year'} if $attrs->{'year'};
     $attributes{'perl_5_double_license'} = $attrs->{'perl_5_double_license'}
         if $attrs->{'perl_5_double_license'};
     croak q{Missing attribute 'holder'}
