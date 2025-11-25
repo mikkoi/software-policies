@@ -5,12 +5,26 @@ use strict;
 use warnings;
 use 5.010;
 
+# ABSTRACT: Create project policy file: Contributing / PerlDistZilla
+
+our $VERSION = '0.001';
+
 use Carp;
 use Data::Section -setup;
 
-# ABSTRACT
+=pod
 
-our $VERSION = '0.001';
+=encoding utf8
+
+=for Pod::Coverage new create get_available_classes_and_versions
+
+=for stopwords
+
+=head1 METHODS
+
+=head2 new
+
+=cut
 
 sub new {
     my ($class) = @_;

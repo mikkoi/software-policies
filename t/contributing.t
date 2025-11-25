@@ -203,24 +203,25 @@ subtest 'Create Contributing' => sub {
         filename => 'CONTRIBUTING.md',
         format   => 'markdown',
     );
-    my %c = Software::Policies->new->create(
+    # my %c = Software::Policies->new->create(
+    my @p = Software::Policies->new->create(
         policy => 'Contributing',
         class => 'PerlDistZilla', version => 1, format => 'markdown',
         attributes => { },
         );
-    is(\%c, \%wanted, 'Contributing (format markdown) is equal');
-    %c = Software::Policies->new->create(policy=>'Contributing');
-    is(\%c, \%wanted, 'Contributing is equal with default values');
+    is($p[0], \%wanted, 'Contributing (format markdown) is equal');
+    @p = Software::Policies->new->create(policy=>'Contributing');
+    is($p[0], \%wanted, 'Contributing is equal with default values');
 
     # Text
     $wanted{'format'}   = 'text';
     $wanted{'text'}     = $CONTRIBUTING_PERL_DIST_ZILLA_V1_TEXT;
     $wanted{'filename'} = 'CONTRIBUTING.txt';
-    %c = Software::Policies->new->create(
+    @p = Software::Policies->new->create(
         policy => 'Contributing',
         class => 'PerlDistZilla', version => 1, format => 'text',
     );
-    is(\%c, \%wanted, 'Contributing (format text) is equal');
+    is($p[0], \%wanted, 'Contributing (format text) is equal');
     done_testing;
 };
 done_testing;

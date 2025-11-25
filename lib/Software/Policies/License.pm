@@ -92,20 +92,43 @@ sub create {
     my %attributes;
     my $attrs = $args{'attributes'}//{};
     $attributes{'holder'} = $attrs->{'authors'}->[0] if $attrs->{'authors'};
-    my $data_section = $class =~ s/::/_/grmsx;
-    croak q{Missing option 'holder'}
+    $attributes{'year'} = $attrs->{'authors'}->[0] if $attrs->{'authors'};
+    $attributes{'perl_5_double_license'} = $attrs->{'perl_5_double_license'}
+        if $attrs->{'perl_5_double_license'};
+    croak q{Missing attribute 'holder'}
         if( ! defined $attributes{'holder'} );
-    my $module = 'Software::License::' . $class;
-    load $module;
-    my $txt = $module->new(\%attributes);
-    return (
+    my $txt;
+    if( $class eq 'Perl_5' && $attributes{'perl_5_double_license'} ) {
+        load 'Software::License::GPL_3';         # filename: LICENSE-GPL-3
+        load 'Software::License::Artistic_2_0';  # filename: LICENSE-Artistic-2.0
+        return {
+                policy   => __PACKAGE__ =~ m/.*::([[:word:]]{1,})$/msx,
+                class    => 'GPL',
+                version  => 1,
+                text     => Software::License::GPL_3->new(\%attributes)->fulltext,
+                filename => 'LICENSE-GPL-3',
+                format   => 'text',
+            }, {
+                policy   => __PACKAGE__ =~ m/.*::([[:word:]]{1,})$/msx,
+                class    => 'Artistic',
+                version  => '1.0',
+                text     => Software::License::Artistic_2_0->new(\%attributes)->fulltext,
+                filename => 'LICENSE-Artistic-2.0',
+                format   => 'text',
+            };
+    } else {
+        my $module = 'Software::License::' . $class;
+        load $module;
+        $txt = $module->new(\%attributes);
+    }
+    return {
         policy   => __PACKAGE__ =~ m/.*::([[:word:]]{1,})$/msx,
         class    => $class,
         version  => $version,
         text     => $txt->fulltext,
         filename => _filename($format),
         format   => $format,
-    );
+    };
 }
 
 =head2 get_available_classes_and_versions

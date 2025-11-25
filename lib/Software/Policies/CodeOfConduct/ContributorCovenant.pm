@@ -75,9 +75,6 @@ Required attributes:
 
 sub create {
     my ($self, %args) = @_;
-    # use Data::Dumper;
-    # say Dumper $args;
-    # my $class = $args{'class'}//'Simple';
     my $version = $args{'version'}//'1.4';
     my $format = $args{'format'}//'markdown';
     my %attributes;
@@ -100,7 +97,7 @@ sub create {
         policy   => 'CodeOfConduct',
         class    => 'ContributorCovenant',
         version  => $version,
-        text     => $p->fulltext,
+        text     => $p->fulltext . "\n",
         filename => _filename($format),
         format   => $format,
     );

@@ -80,7 +80,7 @@ sub create {
     load $module;
     my $m = $module->new();
     my %r = $m->create( %args );
-    return %r;
+    return \%r;
 }
 
 =head2 get_available_classes_and_versions

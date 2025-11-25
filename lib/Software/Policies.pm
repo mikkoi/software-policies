@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use 5.010;
 
-# ABSTRACT: Create policy files: CODE_OF_CONDUCT.md, CONTRIBUTING.md, FUNDING.md, GOVERNANCE.md, SECURITY.md, SUPPORT.md, etc.
+# ABSTRACT: Create policy files: CODE_OF_CONDUCT, CONTRIBUTING, FUNDING, GOVERNANCE, SECURITY, SUPPORT, etc.
 
 our $VERSION = '0.001';
 
@@ -41,7 +41,7 @@ though not likely.
 =head1 DESCRIPTION
 
 Software-Policies is a framework for creating different policy and related, such as license, files
-which are commonly present in repositories. Many of these are practically boilerplace
+which are commonly present in repositories. Many of these are practically boilerplate
 but it is good to have them present in the repository, especially if the repository
 is public.
 
@@ -49,12 +49,6 @@ Some public hosting sites, such as GitHub, place extra weight on these files, an
 them is seen as an indicator of project health and of being welcoming community engagement.
 
 With this package, creating the files is quick and easy.
-
-If you use L<Dist::Zilla> as your project distribution builder, please take a look
-at L<Dist::Zilla::App::Cmd::policies> to generate the files based on information
-in your B<dist.ini> file and at L<Dist::Zilla::Plugin::Test::Software::Policies> to
-test the files are kept updated at every release. These modules are in the
-L<Dist::Zilla::Plugin::Softare::Policies> distribution.
 
 =cut
 
@@ -68,7 +62,7 @@ Create Software::Policies object.
 =cut
 
 sub new {
-    my ($class, %opts) = @_;
+    my ($class) = @_;
     my %self;
     return bless \%self, $class;
 }
@@ -90,7 +84,7 @@ Only list classes and version of this policy.
 =cut
 
 sub list {
-    my ($self, %args) = @_;
+    my ($self) = @_;
     return $self->_get_policies();
 }
 
@@ -106,16 +100,10 @@ sub create {
     my $module = __PACKAGE__ . q{::} . $policy;
     load $module;
     my $m = $module->new();
-    my %r = $m->create( %args );
-    return %r;
+    my @r = $m->create( %args );
+    return @r;
 }
 
-
-
-# my $policies = {
-#     'Contributing'  => { classes => { 'Perl::Dist::Zilla' => { versions => { '1' => 1 }, }, }, },
-#     'CodeOfConduct' => { classes => { 'Simple' => { versions => { '1' => 1 }, }, }, },
-# };
 sub _get_policies {
     my ($self) = @_;
     my $loader = Module::Loader->new;
@@ -126,9 +114,7 @@ sub _get_policies {
         m/^ $this_package :: [^:]{1,} $/msx;
     } $loader->find_modules($this_package);
     foreach my $policy_module (@policies) {
-        # say $policy_module;
         my ($policy) = $policy_module =~ m/.*::([[:word:]]{1,})$/msx;
-        # my %classes = $self->_get_policy($policy);
         $policies{ $policy } = { classes => {} } if( ! defined $policies{ $policy } );
         $policies{ $policy }->{classes} = $self->_get_policy($policy);
     }
@@ -144,7 +130,15 @@ sub _get_policy {
 
 =head1 SEE ALSO
 
-L<https://metacpan.org/pod/Software::Security::Policy> can create the Security Policy.
+If you use L<Dist::Zilla> as your project distribution builder, please take a look
+at L<https://metacpan.org/pod/Dist::Zilla::App::Cmd::policies> to generate the files based on information
+in your B<dist.ini> file and at L<https://metacpan.org/pod/Dist::Zilla::Test::Software::Policies> to
+test the files are kept updated at every release. These modules are in the
+L<https://metacpan.org/pod/Dist::Zilla::Plugin::Softare::Policies> distribution.
+
+L<Software::Policy::CodeOfConduct> can create a Code Of Conduct policy using the L<Contributor Covenant|https://www.contributor-covenant.org/> templates.
+
+L<Software::Security::Policy> can create a Security Policy following the guidelines of <CPAN Security Group|https://security.metacpan.org/>.
 
 GitHub has a list of L<Supported File Types|https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file>.
 

@@ -6,13 +6,21 @@ use strict;
 use warnings;
 use 5.010;
 
+# ABSTRACT: Create project policy file: Security / Individual
+
+our $VERSION = '0.001';
+
 use Carp;
 
 use Software::Security::Policy::Individual 0.11;
 
-# ABSTRACT
+=pod
 
-our $VERSION = '0.001';
+=encoding utf8
+
+=for Pod::Coverage create get_available_classes_and_versions
+
+=for stopwords
 
 =head1 METHODS
 
@@ -68,8 +76,6 @@ See L<Software::Security::Policy::Individual>.
 
 sub create {
     my ($self, %args) = @_;
-    # use Data::Dumper;
-    # say Dumper \%args;
     my $version = $args{'version'}//'1';
     my $format = $args{'format'}//'markdown';
 

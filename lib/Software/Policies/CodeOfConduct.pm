@@ -73,15 +73,13 @@ Required options:
 
 sub create {
     my ($self, %args) = @_;
-    # use Data::Dumper;
-    # say Dumper $args;
     my $class = delete $args{'class'}//'ContributorCovenant';
     my $module = __PACKAGE__ . q{::} . $class;
     load $module;
     my $m = $module->new();
     my %r = $m->create( %args );
 
-    return %r;
+    return \%r;
 }
 
 =head2 get_available_classes_and_versions

@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use 5.010;
 
-# ABSTRACT
+# ABSTRACT: Create project policy file: Contributing
 
 our $VERSION = '0.001';
 
@@ -65,7 +65,7 @@ sub create {
     load $module;
     my $m = $module->new();
     my %r = $m->create( %args );
-    return %r;
+    return \%r;
 }
 
 =head2 get_available_classes_and_versions
