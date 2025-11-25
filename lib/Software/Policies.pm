@@ -50,6 +50,20 @@ them is seen as an indicator of project health and of being welcoming community 
 
 With this package, creating the files is quick and easy.
 
+Current supported are:
+
+=over 8
+
+=item Contributing
+
+=item CodeOfConduct
+
+=item Security
+
+=item License
+
+=back
+
 =cut
 
 
