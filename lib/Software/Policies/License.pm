@@ -105,14 +105,14 @@ sub create {
                 policy   => __PACKAGE__ =~ m/.*::([[:word:]]{1,})$/msx,
                 class    => 'GPL',
                 version  => 1,
-                text     => Software::License::GPL_3->new(\%attributes)->fulltext,
+                text     => Software::License::GPL_3->new(\%attributes)->license,
                 filename => 'LICENSE-GPL-3',
                 format   => 'text',
             }, {
                 policy   => __PACKAGE__ =~ m/.*::([[:word:]]{1,})$/msx,
                 class    => 'Artistic',
                 version  => '1.0',
-                text     => Software::License::Artistic_2_0->new(\%attributes)->fulltext,
+                text     => Software::License::Artistic_2_0->new(\%attributes)->license,
                 filename => 'LICENSE-Artistic-2.0',
                 format   => 'text',
             };
@@ -125,7 +125,7 @@ sub create {
         policy   => __PACKAGE__ =~ m/.*::([[:word:]]{1,})$/msx,
         class    => $class,
         version  => $version,
-        text     => $txt->fulltext,
+        text     => $txt->license,
         filename => _filename($format),
         format   => $format,
     };
