@@ -7,7 +7,7 @@ use 5.010;
 
 # ABSTRACT: Create a policy file: Code of Conduct / Contributor Covenant
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 
 use Carp;
 use Software::Policy::CodeOfConduct;

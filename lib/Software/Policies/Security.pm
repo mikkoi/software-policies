@@ -6,7 +6,7 @@ use 5.010;
 
 # ABSTRACT: Create project policy file: Security
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 
 use Carp;
 use Module::Load qw( load );
