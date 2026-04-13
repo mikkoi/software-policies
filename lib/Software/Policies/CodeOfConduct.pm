@@ -116,15 +116,6 @@ sub get_available_classes_and_versions {
     };
 }
 
-# sub _filename {
-#     my ($format) = @_;
-#     my %formats = (
-#         'markdown' => 'CODE_OF_CONDUCT.md',
-#         'text'     => 'CODE_OF_CONDUCT.txt',
-#     );
-#     return $formats{$format};
-# }
-
 1;
 
 __END__
