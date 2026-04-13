@@ -78,8 +78,8 @@ sub create {
 
     my %attributes;
     my $attrs = delete $args{'attributes'}//{};
-    $attributes{'ai_disclosure'} = delete $attrs->{'ai_disclosure'}//0;
-    $attributes{'ai_assisted'} = delete $attrs->{'ai_assisted'}//1;
+    $attributes{'ai_disclosure'} = $attrs->{'ai_disclosure'}//0;
+    $attributes{'ai_assisted'} = $attrs->{'ai_assisted'}//1;
 
     croak 'Unknown arguments: ', join q{,}, keys %args if(%args);
 
