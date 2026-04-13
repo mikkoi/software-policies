@@ -43,7 +43,7 @@ Options:
 
 =item class
 
-Available classes: B<Perl::Dist::Zilla> (default).
+Available classes: B<PerlDistZilla> (default).
 
 =item version
 
@@ -59,13 +59,13 @@ Available formats: markdown (default), text.
 
 sub create {
     my ($self, %args) = @_;
-    my $class = $args{'class'}//'PerlDistZilla';
+    my $class = delete $args{'class'}//'PerlDistZilla';
 
     my $module = __PACKAGE__ . q{::} . $class;
     load $module;
     my $m = $module->new();
     my %r = $m->create( %args );
-    return \%r;
+    return (\%r);
 }
 
 =head2 get_available_classes_and_versions
@@ -73,7 +73,7 @@ sub create {
 Return a hash with classes as keys. Example:
 
     {
-        'Perl::Dist::Zilla' => {
+        'PerlDistZilla' => {
             versions => {
                 '1' => 1,
             },
