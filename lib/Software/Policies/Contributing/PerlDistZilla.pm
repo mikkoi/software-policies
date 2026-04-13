@@ -62,7 +62,7 @@ Add an AI disclaimer to the policy. Allowed values: 0, 1. Default: 0.
 
 =item ai_assisted
 
-If I<ai_disclamer> is true, I<ai_assisted> defines if AI assisted contributions are welcome or not.
+If I<ai_disclaimer> is true, I<ai_assisted> defines if AI assisted contributions are welcome or not.
 Allowed values: 0, 1. Default: 1.
 
 =back
