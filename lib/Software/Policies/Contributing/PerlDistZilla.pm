@@ -146,7 +146,7 @@ when preparing your contribution, please note the following:
 - Consider the ethical implications of your tool choices, particularly
   regarding training data practices.
 
-See [AI-DISCLOSURE.md](AI-DISCLOSURE.md) for the full policy on AI usage
+See [AI_DISCLOSURE.md](AI_DISCLOSURE.md) for the full policy on AI usage
 in this project.
 
 EOF
@@ -163,7 +163,7 @@ when preparing your contribution, please note the following:
 - Consider the ethical implications of your tool choices, particularly
   regarding training data practices.
 
-See file AI-DISCLOSURE.md for the full policy on AI usage
+See file AI_DISCLOSURE.md for the full policy on AI usage
 in this project.
 
 EOF
@@ -190,7 +190,7 @@ beyond the exception noted above.
 If you are unsure whether your use of a particular tool falls under
 this policy, please ask before submitting.
 
-See [AI-DISCLOSURE.md](AI-DISCLOSURE.md) for the full rationale
+See [AI_DISCLOSURE.md](AI_DISCLOSURE.md) for the full rationale
 behind this policy.
 
 EOF
@@ -215,7 +215,7 @@ beyond the exception noted above.
 If you are unsure whether your use of a particular tool falls under
 this policy, please ask before submitting.
 
-See file AI-DISCLOSURE.md for the full rationale
+See file AI_DISCLOSURE.md for the full rationale
 behind this policy.
 
 EOF
