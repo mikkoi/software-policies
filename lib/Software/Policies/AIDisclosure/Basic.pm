@@ -62,7 +62,7 @@ Required attribute for contact information.
 
 =item ai_tools
 
-Required list of ai_tools used. Example: [ 'Claude', 'Copilot', ]. Must contain at least one.
+Required list of ai_tools used (a string). Example: 'Claude, Copilot and Gemini'.
 
 =back
 
