@@ -59,7 +59,7 @@ Available formats: markdown (default), text.
 
 sub create {
     my ($self, %args) = @_;
-    my $class = $args{'class'}//'PerlDistZilla';
+    my $class = delete $args{'class'}//'PerlDistZilla';
 
     my $module = __PACKAGE__ . q{::} . $class;
     load $module;
