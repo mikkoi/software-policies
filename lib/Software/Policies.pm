@@ -29,14 +29,16 @@ though not likely.
 
     use Software::Policies;
     my $policies = Software::Policies->new;
-    my %contributing = $policies->create(
+    # Returns a list because there can be more than one files created.
+    my @contributing_policies = $policies->create(
         policy => 'Contributing',
         class => 'PerlDistZilla',
         version => '1',
         format => 'markdown',
         attributes => { },
     );
-    print $contributing{'text'} . "\n";
+    my $contributing = $contributing_policies[0];
+    print $contributing->{'text'} . "\n";
 
 
 =head1 DESCRIPTION
