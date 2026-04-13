@@ -29,13 +29,14 @@ though not likely.
 
     use Software::Policies;
     my $policies = Software::Policies->new;
-    my $contributing = $policies->create(
+    my %contributing = $policies->create(
         policy => 'Contributing',
-        class => 'Simple',
+        class => 'PerlDistZilla',
         version => '1',
         format => 'markdown',
         attributes => { },
     );
+    say $contributing{'text'};
 
 
 =head1 DESCRIPTION

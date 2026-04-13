@@ -53,7 +53,7 @@ sub create {
 
 sub get_available_classes_and_versions {
     return {
-        'Perl::Dist::Zilla' => {
+        'PerlDistZilla' => {
             versions => {
                 '1' => 1,
             },

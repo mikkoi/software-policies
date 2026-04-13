@@ -43,7 +43,7 @@ Options:
 
 =item class
 
-Available classes: B<Perl::Dist::Zilla> (default).
+Available classes: B<PerlDistZilla> (default).
 
 =item version
 
@@ -73,7 +73,7 @@ sub create {
 Return a hash with classes as keys. Example:
 
     {
-        'Perl::Dist::Zilla' => {
+        'PerlDistZilla' => {
             versions => {
                 '1' => 1,
             },
