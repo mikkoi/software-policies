@@ -114,7 +114,6 @@ sub get_available_classes_and_versions {
             },
             formats => {
                 'markdown' => 1,
-                'text'     => 1,
             },
         },
     };
