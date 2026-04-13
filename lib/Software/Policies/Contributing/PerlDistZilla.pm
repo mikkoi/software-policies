@@ -80,7 +80,6 @@ sub create {
     my $attrs = delete $args{'attributes'}//{};
     $attributes{'ai_disclaimer'} = delete $attrs->{'ai_disclaimer'}//0;
     $attributes{'ai_assisted'} = delete $attrs->{'ai_assisted'}//1;
-    croak 'Unknown attributes: ', join q{,}, keys %{ $attrs } if(%{ $attrs });
 
     croak 'Unknown arguments: ', join q{,}, keys %args if(%args);
 
