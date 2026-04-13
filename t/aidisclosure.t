@@ -139,13 +139,10 @@ subtest 'Create AIDisclosure' => sub {
                 'Test Runner <test.runner@example.com>',
                 'Test Runner 2 <test.runner.2@example.com>',
             ],
-            # ai_tools => [ qw( Claude Copilot Gemini Venice Grokk ) ],
             ai_tools => 'Claude, Copilot, Gemini, Venice and Grokk',
         },
     );
     is($p[0], \%wanted, 'AIDisclosure (format markdown) is equal');
-    # @p = Software::Policies->new->create(policy=>'AIDisclosure');
-    # is($p[0], \%wanted, 'AIDisclosure is equal with default values');
 
     done_testing;
 };
