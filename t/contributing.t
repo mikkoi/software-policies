@@ -452,7 +452,7 @@ subtest 'Create Contributing with AI remark' => sub {
     my @p = Software::Policies->new->create(
         policy => 'Contributing',
         class => 'PerlDistZilla', version => 1, format => 'markdown',
-        attributes => { ai_disclaimer => 1, },
+        attributes => { ai_disclosure => 1, },
         );
     is($p[0], \%wanted, 'Contributing (format markdown) with ai remarks (positive) is equal');
     # @p = Software::Policies->new->create(policy=>'Contributing');
@@ -465,7 +465,7 @@ subtest 'Create Contributing with AI remark' => sub {
     @p = Software::Policies->new->create(
         policy => 'Contributing',
         class => 'PerlDistZilla', version => 1, format => 'text',
-        attributes => { ai_disclaimer => 1, ai_assisted => 0, },
+        attributes => { ai_disclosure => 1, ai_assisted => 0, },
     );
     is($p[0], \%wanted, 'Contributing (format text) is equal');
     done_testing;

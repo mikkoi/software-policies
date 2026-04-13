@@ -56,13 +56,13 @@ Available formats: markdown (default), text.
 
 =over 8
 
-=item ai_disclaimer
+=item ai_disclosure
 
-Add an AI disclaimer to the policy. Allowed values: 0, 1. Default: 0.
+Add an AI disclosure to the policy. Allowed values: 0, 1. Default: 0.
 
 =item ai_assisted
 
-If I<ai_disclaimer> is true, I<ai_assisted> defines if AI assisted contributions are welcome or not.
+If I<ai_disclosure> is true, I<ai_assisted> defines if AI assisted contributions are welcome or not.
 Allowed values: 0, 1. Default: 1.
 
 =back
@@ -78,13 +78,13 @@ sub create {
 
     my %attributes;
     my $attrs = delete $args{'attributes'}//{};
-    $attributes{'ai_disclaimer'} = delete $attrs->{'ai_disclaimer'}//0;
+    $attributes{'ai_disclosure'} = delete $attrs->{'ai_disclosure'}//0;
     $attributes{'ai_assisted'} = delete $attrs->{'ai_assisted'}//1;
 
     croak 'Unknown arguments: ', join q{,}, keys %args if(%args);
 
-    if( $attributes{'ai_disclaimer'} ) {
-        $attributes{'ai_disclaimer_text'} = _ai_assisted( $attributes{'ai_assisted'}, $format );
+    if( $attributes{'ai_disclosure'} ) {
+        $attributes{'ai_disclosure_text'} = _ai_assisted( $attributes{'ai_assisted'}, $format );
     }
 
     my ($data_section) = __PACKAGE__ =~ m/.+::([^:]+)$/msx;
@@ -268,7 +268,7 @@ file, please install Perl::Tidy and use perltidy before submitting patches.
 If there is a `tidyall.ini` file, you can also install Code::TidyAll and run
 `tidyall` on a file or `tidyall -a` to tidy all files.
 
-{{ $ai_disclaimer_text }}### Patching documentation
+{{ $ai_disclosure_text }}### Patching documentation
 
 Much of the documentation Pod is generated at release time.  Some is
 generated boilerplate; other documentation is built from pseudo-POD
@@ -355,7 +355,7 @@ file, please install Perl::Tidy and use perltidy before submitting patches.
 If there is a `tidyall.ini` file, you can also install Code::TidyAll and run
 `tidyall` on a file or `tidyall -a` to tidy all files.
 
-{{ $ai_disclaimer_text }}Patching documentation
+{{ $ai_disclosure_text }}Patching documentation
 
 Much of the documentation Pod is generated at release time.  Some is
 generated boilerplate; other documentation is built from pseudo-POD
