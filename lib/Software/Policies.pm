@@ -36,7 +36,7 @@ though not likely.
         format => 'markdown',
         attributes => { },
     );
-    say $contributing{'text'};
+    print $contributing{'text'} . "\n";
 
 
 =head1 DESCRIPTION
