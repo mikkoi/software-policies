@@ -6,7 +6,7 @@ use 5.010;
 
 # ABSTRACT: Create project policy file: AIDisclosure
 
-our $VERSION = '0.003';
+our $VERSION = '0.004';
 
 use Carp;
 
