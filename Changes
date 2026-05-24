@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+    * Add Maintainer Succession policy.
 
 0.003     2026-04-14 02:21:14+02:00 Europe/Stockholm
 
