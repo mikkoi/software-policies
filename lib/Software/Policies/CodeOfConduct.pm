@@ -7,7 +7,7 @@ use 5.010;
 
 # ABSTRACT: Create project policy file: Code of Conduct
 
-our $VERSION = '0.005';
+our $VERSION = '0.006';
 
 use Carp;
 use Module::Load qw( load );
