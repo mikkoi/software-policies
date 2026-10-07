@@ -22,7 +22,7 @@ my $CONTRIBUTING_PERL_DIST_ZILLA_V1_MARKDOWN = <<'EOF';
 Thank you for considering contributing to this distribution.  This file
 contains instructions that will help you work with the source code.
 
-The distribution is managed with Dist::Zilla.  This means than many of the
+The distribution is managed with Dist::Zilla.  This means that many of the
 usual files you might expect are not in the repository, but are generated at
 release time, as is much of the documentation.  Some generated files are
 kept in the repository as a convenience (e.g. Makefile.PL or cpanfile).
@@ -111,7 +111,7 @@ HOW TO CONTRIBUTE
 Thank you for considering contributing to this distribution.  This file
 contains instructions that will help you work with the source code.
 
-The distribution is managed with Dist::Zilla.  This means than many of the
+The distribution is managed with Dist::Zilla.  This means that many of the
 usual files you might expect are not in the repository, but are generated at
 release time, as is much of the documentation.  Some generated files are
 kept in the repository as a convenience (e.g. Makefile.PL or cpanfile).
@@ -231,7 +231,7 @@ my $CONTRIBUTING_PERL_DIST_ZILLA_V1_MARKDOWN_WITH_AI_YES = <<'EOF';
 Thank you for considering contributing to this distribution.  This file
 contains instructions that will help you work with the source code.
 
-The distribution is managed with Dist::Zilla.  This means than many of the
+The distribution is managed with Dist::Zilla.  This means that many of the
 usual files you might expect are not in the repository, but are generated at
 release time, as is much of the documentation.  Some generated files are
 kept in the repository as a convenience (e.g. Makefile.PL or cpanfile).
@@ -334,7 +334,7 @@ HOW TO CONTRIBUTE
 Thank you for considering contributing to this distribution.  This file
 contains instructions that will help you work with the source code.
 
-The distribution is managed with Dist::Zilla.  This means than many of the
+The distribution is managed with Dist::Zilla.  This means that many of the
 usual files you might expect are not in the repository, but are generated at
 release time, as is much of the documentation.  Some generated files are
 kept in the repository as a convenience (e.g. Makefile.PL or cpanfile).
