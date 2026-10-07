@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.005     2026-10-07 20:04:24+02:00 Europe/Stockholm
     * Change Co-Authored-By to AI-assisted-by in Contributing.
 
 0.004     2026-10-07 13:50:31+02:00 Europe/Stockholm
