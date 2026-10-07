@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+    * Add policy Maintainer Succession v.1.
     * Add policy Contributing/PerlDistZilla v.1.1.
     * Add policy AIDisclosure/Basic v.1.1.
     * Add version 1.1 of Contributing/PerlDistZilla policy.
