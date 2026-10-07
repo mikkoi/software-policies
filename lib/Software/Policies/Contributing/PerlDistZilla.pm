@@ -461,17 +461,3 @@ Once installed, here are some dzil commands you might try:
 
 You can learn more about Dist::Zilla at http://dzil.org/
 __END__
-
-
-- Disclose that you have used AI tools.                                
-  This is best done on commit level, for example, with a               
-  "Co-Authored-By:" field or similar note.                             
-- Review, understand, and test all AI-generated code before submitting.
-                                                                       
-  Do not submit raw, unreviewed AI output.                             
-- Consider the ethical implications of your tool choices, particularly 
-  regarding training data practices.                                   
-                                                                       
-                                                                       
-                                                                       
-- Be prepared to disclose which AI tools you used if asked.
