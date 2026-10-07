@@ -148,7 +148,7 @@ sub _get_policy {
 =head1 SEE ALSO
 
 If you use L<Dist::Zilla> as your project distribution builder, please take a look
-at L<https://metacpan.org/pod/Dist::Zilla::App::Cmd::policies> to generate the files based on information
+at L<https://metacpan.org/pod/Dist::Zilla::App::Command::policies> to generate the files based on information
 in your B<dist.ini> file and at L<https://metacpan.org/pod/Dist::Zilla::Test::Software::Policies> to
 test the files are kept updated at every release. These modules are in the
 L<https://metacpan.org/pod/Dist::Zilla::Plugin::Softare::Policies> distribution.
