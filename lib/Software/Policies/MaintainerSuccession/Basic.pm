@@ -7,7 +7,7 @@ use 5.010;
 
 # ABSTRACT: Create project policy file: MaintainerSuccession / Basic
 
-our $VERSION = '0.004';
+our $VERSION = '0.005';
 
 use Carp;
 use Data::Section -setup;
