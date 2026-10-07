@@ -84,11 +84,11 @@ sub create {
     croak 'Unknown arguments: ', join q{,}, keys %args if(%args);
 
     if( $attributes{'ai_disclosure'} ) {
-        $attributes{'ai_disclosure_text'} = _ai_assisted( $attributes{'ai_assisted'}, $format );
+        $attributes{'ai_disclosure_text'} = _ai_assisted( $attributes{'ai_assisted'}, $version, $format );
     }
 
     my ($data_section) = __PACKAGE__ =~ m/.+::([^:]+)$/msx;
-    my $data_section_label = $data_section . q{_v} . $version . q{_} . $format;
+    my $data_section_label = $data_section . q{_v} . q{1} . q{_} . $format;
     my $template = $self->section_data($data_section_label);
     croak "Cannot find data section $data_section_label"
         if( ! $template );
@@ -131,42 +131,102 @@ sub _filename {
 }
 
 sub _ai_assisted {
-    my ($wanted, $format) = @_;
+    my ($wanted, $version, $format) = @_;
     if($wanted) {
         if($format eq 'markdown') {
-            return <<'EOF';
+            if($version eq '1') {
+                return <<'EOF';
 ### AI-assisted contributions
 
 This project uses AI-assisted development tools. If you also use AI tools
 when preparing your contribution, please note the following:
 
-- Review, understand, and test all AI-generated code before submitting.
-  Do not submit raw, unreviewed AI output.
-- Be prepared to disclose which AI tools you used if asked.
-- Consider the ethical implications of your tool choices, particularly
-  regarding training data practices.
+- Disclose if you have used AI tools in preparing your contribution.
+- Review, understand, and test all AI-generated code, documentation
+  and other output before submitting.
+- Do not submit raw, unreviewed AI output.
+- Consider the ethical implications of your choice of AI tools,
+  particularly regarding how the tools' models were trained and whether
+  their data sourcing practices are consistent with respect for
+  creators and rights holders.
+- Be prepared to identify which AI tools were used if asked.
 
 See [AI_DISCLOSURE.md](AI_DISCLOSURE.md) for the full policy on AI usage
 in this project.
 
 EOF
+            } else {
+                # version 1.1
+                return <<'EOF';
+### AI-assisted contributions
+
+This project uses AI-assisted development tools. If you also use AI tools
+when preparing your contribution, please note the following:
+
+- Disclose that you have used AI tools.
+  This is best done on commit level, for example, with a
+  "Co-Authored-By:" field or similar note.
+- Review, understand, and test all AI-generated code, documentation
+  and other output before submitting.
+- Do not submit raw, unreviewed AI output.
+- Consider the ethical implications of your choice of AI tools,
+  particularly regarding how the tools' models were trained and whether
+  their data sourcing practices are consistent with respect for
+  creators and rights holders.
+- Be prepared to disclose which AI tools you used if asked.
+
+See [AI_DISCLOSURE.md](AI_DISCLOSURE.md) for the full policy on AI usage
+in this project.
+
+EOF
+            }
         } else {
-            return <<'EOF';
+            if($version eq '1') {
+                return <<'EOF';
 AI-assisted contributions
 
 This project uses AI-assisted development tools. If you also use AI tools
 when preparing your contribution, please note the following:
 
-- Review, understand, and test all AI-generated code before submitting.
-  Do not submit raw, unreviewed AI output.
-- Be prepared to disclose which AI tools you used if asked.
-- Consider the ethical implications of your tool choices, particularly
-  regarding training data practices.
+- Disclose if you have used AI tools in preparing your contribution.
+- Review, understand, and test all AI-generated code, documentation
+  and other output before submitting.
+- Do not submit raw, unreviewed AI output.
+- Consider the ethical implications of your choice of AI tools,
+  particularly regarding how the tools' models were trained and whether
+  their data sourcing practices are consistent with respect for
+  creators and rights holders.
+- Be prepared to identify which AI tools were used if asked.
 
 See file AI_DISCLOSURE.md for the full policy on AI usage
 in this project.
 
 EOF
+            } else {
+                # version 1.1
+                return <<'EOF';
+AI-assisted contributions
+
+This project uses AI-assisted development tools. If you also use AI tools
+when preparing your contribution, please note the following:
+
+- Disclose that you have used AI tools.
+  This is best done on commit level, for example, with a
+  "Co-Authored-By:" field or similar note.
+- Review, understand, and test all AI-generated code, documentation
+  and other output before submitting.
+- Do not submit raw, unreviewed AI output.
+- Consider the ethical implications of your choice of AI tools,
+  particularly regarding how the tools' models were trained and whether
+  their data sourcing practices are consistent with respect for
+  creators and rights holders.
+- Be prepared to disclose which AI tools you used if asked.
+
+See file AI_DISCLOSURE.md for the full policy on AI usage
+in this project.
+
+EOF
+            }
         }
     } else {
         if($format eq 'markdown') {
@@ -401,3 +461,17 @@ Once installed, here are some dzil commands you might try:
 
 You can learn more about Dist::Zilla at http://dzil.org/
 __END__
+
+
+- Disclose that you have used AI tools.                                
+  This is best done on commit level, for example, with a               
+  "Co-Authored-By:" field or similar note.                             
+- Review, understand, and test all AI-generated code before submitting.
+                                                                       
+  Do not submit raw, unreviewed AI output.                             
+- Consider the ethical implications of your tool choices, particularly 
+  regarding training data practices.                                   
+                                                                       
+                                                                       
+                                                                       
+- Be prepared to disclose which AI tools you used if asked.
