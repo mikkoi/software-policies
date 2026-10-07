@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.006     2026-10-07 22:16:34+02:00 Europe/Stockholm
     * Fix indentation to avoid rendering as a Markdown list.
 
 0.005     2026-10-07 20:04:24+02:00 Europe/Stockholm
