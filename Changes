@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+    * Change Co-Authored-By to AI-assisted-by in Contributing.
 
 0.004     2026-10-07 13:50:31+02:00 Europe/Stockholm
     * Add policy Maintainer Succession v.1.
