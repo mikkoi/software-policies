@@ -47,7 +47,7 @@ Available classes: B<Basic> (default).
 
 =item version
 
-Available versions: 1 (default), text.
+Available versions: 1 (default), 1.1.
 
 =item format
 
@@ -76,6 +76,7 @@ Return a hash with classes as keys. Example:
         'Basic' => {
             versions => {
                 '1' => 1,
+                '1.1' => 1,
             },
             formats => {
                 'markdown' => 1,
@@ -90,6 +91,7 @@ sub get_available_classes_and_versions {
         'Basic' => {
             versions => {
                 '1' => 1,
+                '1.1' => 1,
             },
             formats => {
                 'markdown' => 1,
