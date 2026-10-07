@@ -272,11 +272,15 @@ If there is a `tidyall.ini` file, you can also install Code::TidyAll and run
 This project uses AI-assisted development tools. If you also use AI tools
 when preparing your contribution, please note the following:
 
-- Review, understand, and test all AI-generated code before submitting.
-  Do not submit raw, unreviewed AI output.
-- Be prepared to disclose which AI tools you used if asked.
-- Consider the ethical implications of your tool choices, particularly
-  regarding training data practices.
+- Disclose if you have used AI tools in preparing your contribution.
+- Review, understand, and test all AI-generated code, documentation
+  and other output before submitting.
+- Do not submit raw, unreviewed AI output.
+- Consider the ethical implications of your choice of AI tools,
+  particularly regarding how the tools' models were trained and whether
+  their data sourcing practices are consistent with respect for
+  creators and rights holders.
+- Be prepared to identify which AI tools were used if asked.
 
 See [AI_DISCLOSURE.md](AI_DISCLOSURE.md) for the full policy on AI usage
 in this project.
