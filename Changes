@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+    * Add policy AIDisclosure/Basic v.1.1.
     * Add version 1.1 of Contributing/PerlDistZilla policy.
     * Add version 1.1 of AIDisclosure/Basic policy.
     * Correct link.
