@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+    * Fix indentation to avoid rendering as a Markdown list.
 
 0.005     2026-10-07 20:04:24+02:00 Europe/Stockholm
     * Change Co-Authored-By to AI-assisted-by in Contributing.
